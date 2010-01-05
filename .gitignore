@@ -4,4 +4,4 @@
 .DS_Store
 .project
 .pydevproject
-
+src/_generated_media/*

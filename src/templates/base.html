@@ -1,62 +1,349 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+	
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>10 CLOUDS / {% block title %}{% endblock %}</title>
+	<meta name="author" content="Magdalena Ostoja-Chyżyńska" />
+	<meta http-equiv="content-language" content="pl" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<title>{% block title %}Przychodnia Capricorn{% endblock %}</title>
+
 	{% block css %}
-	<link rel="stylesheet" type="text/css"  media="screen, projection" href="{{ MEDIA_URL }}combined-{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}.css" />
-	<link rel="stylesheet" type="text/css"  media="screen" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/base/jquery-ui.css"/>
+		<link rel="stylesheet" type="text/css"  media="screen, projection" href="{{ MEDIA_URL }}combined-{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}.css" />
 	{% endblock %}
+	
+	<script type="text/javascript" src="{{MEDIA_URL}}menu.js"></script>	
+	
 </head>
 
 {% load googletags %}
 
 <body>
 
-	<div id="container">
-	
-	    <div class="border"><img src="{{ MEDIA_URL }}global/images/10c_border1.jpg" alt="" /></div>
-	    
-		<!--   =================== /MAINBODY ======================== -->
-	    
-	    <div id="mainbody">
-	    
-	        <div class="col1">
-	        
-		        <a href="/"><img src="{{ MEDIA_URL }}global/images/10c_logo.jpg" alt="" /></a>
-		        
-		        <ul id="menu">
-			        <li><a href="/">Home page</a></li>
-			        {% for el in menu %}
-				        <li><a href="{{el.href}}">{{el.name}}</a></li>
-			        {% endfor %}
-		        </ul>
-	        
-	        </div>     
-	      
-			{% block content %}
-			{% endblock %}
-	    
+	<div id="header">
+		<div class="container">
+			<div class="span-7 prepend-17 last header-text-right">  			
+			 	Strona główna | Promocje | Mapa Strony | Kontakt    		
+			</div>
+		</div>
+	</div>        
+	<div class="container">
+
+		<ul id="sddm">  
+
+		    <li class="drop-down"><div class="span-1 append-3"><a href="#" 
+		        onmouseover="mopen('m1')" 
+		        onmouseout="mclosetime()"><img src="{{MEDIA_URL}}global/images/menu1.png" alt="O nas" /></a>
+		        <div class="drop" id="m1" 
+		            onmouseover="mcancelclosetime()" 
+		            onmouseout="mclosetime()">
+				<div class="span-5"> 
+		        <ul> 
+
+		        <li><a href="#">Nasza Historia</a></li>
+		        <li><a href="#">Przychodnia</a></li>
+		        <li><a href="#">Wirtualna wycieczka</a></li>
+		        <li><a href="#">Galeria zdjęć</a></li>
+		        </ul>    
+		        </div> 
+
+		        <div class="span-2 last"><br/>
+			    <img src="{{MEDIA_URL}}global/images/menu-img-1.png" alt="O nas">
+			    </div>
+
+		        </div></div>
+		    </li>  
+
+			<li class="drop-down"><div class="span-1 append-3"><a href="#"> 
+				<img src="{{MEDIA_URL}}global/images/menu2.png" alt="Kontakt" /></a></div></li>
+
+		    <li class="drop-down"><div class="span-1 append-3"><a href="#" 
+		        onmouseover="mopen('m2')" 
+		        onmouseout="mclosetime()"><img src="{{MEDIA_URL}}global/images/menu3.png" alt="Oferta" /></a>
+		        <div class="drop" id="m2" 
+		            onmouseover="mcancelclosetime()" 
+		            onmouseout="mclosetime()">
+				<div class="span-5">
+		        <ul>   	    
+				<li><a href="#">Usługi stacjonarne</a></li>
+		        <li><a href="#">Usługi pielęgniarskie</a></li>
+		        <li><a href="#">Diagnostyka</a></li>
+		        </ul>    
+				</div>
+
+				<div class="img span-2 last"><br/>
+			    <img src="{{MEDIA_URL}}global/images/menu-img-3.png" alt="Oferta">
+			    </div>
+
+		        </div></div>
+		    </li>   
+
+		    <li class="drop-down"><div class="span-1 append-3"><a href="#" 			onmouseover="mopen('m3')" 
+		    onmouseout="mclosetime()"><img src="{{MEDIA_URL}}global/images/menu4.png" alt="Dla firm" /></a>
+			   <div class="drop" id="m3" 
+		            onmouseover="mcancelclosetime()" 
+		            onmouseout="mclosetime()">
+				<div class="span-6">
+				<ul>
+				<li><a href="#">Medycyna pracy</a></li>
+		        <li><a href="#">Medyczne zabezpieczenie imprez</a></li>
+		        </ul> 
+				</div>
+
+				<div class="img span-1 last"><br/>
+			    <img src="{{MEDIA_URL}}global/images/menu-img-4.png" alt="Dla Firm">
+			    </div>        
+
+		        </div></div>
+			</li>   
+
+		    <li class="drop-down"><div class="span-1 append-3"><a href="#" 			onmouseover="mopen('m4')" 
+		    onmouseout="mclosetime()"><img src="{{MEDIA_URL}}global/images/menu5.png" alt="Inne uslugi" /></a>
+			   <div class="drop" id="m4" 
+		            onmouseover="mcancelclosetime()" 
+		            onmouseout="mclosetime()">  
+				<div class="span-5">
+		        <ul>
+				<li><a href="#">Transport sanitarny</a></li>
+		        <li><a href="#">Wizyty domowe</a></li>
+				<li><a href="#">Odtrucia</a></li>
+				<li><a href="#">Akupunktura</a></li>
+		        </ul> 
+		        </div>
+
+		       	<div class="img-2 span-2 last"><br/>
+			    <img src="{{MEDIA_URL}}global/images/menu-img-5.png" alt="Inne uslugi">
+		        </div>
+
+		        </div></div>
+			</li>
+
+			<li class="drop-down"><div class="span-1 prepend-1 last"><a href="#"> 
+			   <img src="{{MEDIA_URL}}global/images/menu6.png" alt="Sanatoria" /></a></div></li> 
+
+		</ul>
+		<div style="clear:both"></div>   
+
+		<div class="span-8"> 
+
+			<div class="menu-tr span-8">     
+				<div class="menu-bl span-8">  
+					<div class="menu span-8">
+
+						<img src="{{MEDIA_URL}}global/images/capricorn_logo.png" alt="capricorn_logo" /> 
+						<h1></h1>
+
+					</div>
+				</div> 
+			</div>    
+
+			<div class="menu-middle span-8"> 
+				<div class="span-8">
+					<p>Szybkie <span>linki</span></p>
+			    </div>
+			</div>
+
+			<div class="menu-bottom span-8"> 
+				<ul>
+					<li><a href="">Umówienie wizyty</a></li>
+					<li><a href="">Lokalizacja na mapie Google</a></li>
+				</ul>
+			</div>
+
 	    </div>
-	    
-		<!--   =================== /MAINBODY ======================== -->
-	    
-	    <div class="border"><img src="{{ MEDIA_URL }}global/images/10c_border2.jpg" alt="" /></div>
-	    
-	    <div id="footer">
-	    	<p>
-	    		&copy;2009 10Clouds | 
-	    		<a href="/">Home page</a>
-		        {% for el in menu %}
-			        / <a href="{{el.href}}">{{el.name}}</a>
-		        {% endfor %}
-		        / <a href="{% google_login_url request.get_full_path %}">Login</a>
-			</p>
-	    </div>
-	    
-	    <div style="clear:both;"></div>
-	
+
+		<div class="flash-box span-16 last">
+			pim
+		</div>
+
+		<div class="blank span-24 last">
+			&nbsp;
+		</div>
+
+		  <div class="orange-box-container span-17">  
+			<div class="orange-box-top">
+				<div class="orange-box-bottom">
+					<div id="orange-box">           
+						<div> 
+							<div class="orange-left span-9"> 
+							<h2>Witamy w Przychodni J. J. Capricorn</h2>
+							J.J. Capricorn Sp. z o.o. powstała w 1987. Jest jedną z 
+							pierwszych firm w Polsce działającą na rynku usług 
+							medycznych. Zaistniała w burzliwym dla naszego kraju okresie 
+							- przechodzenie z gospodarki nakazowej do rynkowej. Przez 
+							11 lat obsługiwani byli tylko pacjenci prywatni. Od 1 I 1999 
+							wraz z wejściem w życie reformy służby zdrowia, przyjmowani 
+							są również chorzy, których leczenie refundowane jest ze 
+							składek ubezpieczenia zdrowotnego. Aby kompleksowo 
+							obsłużyć naszych pacjentów oferujemy usługi z zakresu 
+							podstawowej i specjalistycznej opieki zdrowotnej. 
+							<p class="link"><a href="">Czytaj więcej</a></p>
+	                        <div class="hr"></div> 
+							<a href="" target="_blank"><img src="{{MEDIA_URL}}global/images/film.png" alt="film"></img></a><br/><br/>
+							<a href="" target="_blank"><img src="{{MEDIA_URL}}global/images/galeria.png" alt="galeria"></img></a>
+							</div>  
+							<div class="orange-right span-6">  
+								<h3>Aktualności</h3>
+								<p class="header-brown">BEZPŁATNIE</p>
+								Badania kandydatów do szkół ponad- 
+								podstawowych i ponadgimnazjalnych lub 
+								wyższych, uczniów tych szkół oraz 
+								studentów i uczestników studiów 
+								doktoranckich z terenu województwa 
+								mazowieckiego, którzy w trakcie praktycznej 
+								nauki zawodu są narażeni na działanie 
+								czynników szkodliwych, uciążliwych lub 
+								niebezpiecznych dla zdrowia.
+	                            <br/><br/>
+								Ilość bezpłatnych badań ograniczona.
+	                            <br/><br/>
+								Badania wykonywane są wyłącznie na 
+								podstawie skierowania wydanego przez 
+								szkołę ponadpodstawową lub uczelnię.
+	                            <br/><br/>
+								Zapraszamy do Przychodni na Bukowińskiej 
+								26B w Warszawie.
+	                            <br/><br/>
+								Rejestrację można wykonać telefonicznie 
+								lub osobiście przez siedem dni w tygodniu
+	                            <br/><br/>
+								<p class="link"><a href="">Czytaj więcej</a></p> 					   
+							</div>   
+						</div>
+					</div> 
+				</div>
+			</div>
+		</div> 
+
+		<div class="span-7 last">  
+
+			<div class="yellow-box-container span-7"> 
+				<div class="yellow-box-left"> 
+					<div class="yellow-box-right"> 
+						<div class="yellow-box-top">
+							<div class="yellow-box-bottom">
+								<div id="yellow-box">           
+									<div>
+										<h4>Nasze usługi</h4>   
+										<ul class="without">
+											<li>Usługi stacjonarne</li> 
+											<li><ul>	
+												<li>ginekologia</li>
+												<li>interna</li>
+												<li>kardiologia</li>
+												<li>laryngologia</li>
+												<li>medycyna pracy</li>
+												<li>neorologia</li>
+												<li>okulistyka</li>
+												<li>pediatria</li> 
+												<li>psychologia</li>
+											</ul></li>
+											<li>Usługi pielęgniarskie</li>
+											<li>Wizyty domowe</li>
+											<li>Transport sanitarmy</li>
+											<li>Medyczne zabezpieczenia imprez</li>
+											<li>Odtrucia</li>
+											<li>Akupunktura</li>
+										</ul>
+								  	</div> 
+								</div>
+					   		</div>  
+						</div> 
+					</div>
+				</div>
+			</div>   
+
+			<div class="blank span-7">
+				&nbsp;
+			</div>
+
+			<div class="green-box-container span-7"> 
+				<div class="green-box-left"> 
+					<div class="green-box-right"> 
+						<div class="green-box-top">
+							<div class="green-box-bottom">
+								<div id="green-box">           
+									<div>
+										<h5>Promocje</h5>
+										Dowiedz się więcej o oferowanych
+										przez nas promocjach i rabatach!
+										<p class="link"><a href="">Czytaj więcej</a></p>
+								  	</div> 
+								</div>
+					   		</div>  
+						</div> 
+					</div>
+				</div>
+			</div>
+
+		</div> 
+
+	   	<div class="blank span-24 last">
+			&nbsp;
+		</div>            
+
 	</div>
+	<div id="footer">
+		<div class="container footer-text">    
+			<div class="span-12 footer-text-left">
+				Umówienie wizyty - telefon (022) 831-86-69 <span class="footer-text-right">| ul. Bukowińska 26B, Warszawa</span> 
+			</div>
+			<div class="span-7 prepend-5 last footer-text-right"> 
+			 	Strona główna | Promocje | Mapa Strony | Kontakt
+			</div>   
+			<div class="span-24 hr"></div>
+			<div class="span-2 append-2"> 
+				O nas
+				<ul>         
+			    	<li>Nasza&nbsp;Historia</li>
+					<li>Przychodnia</li>
+					<li>Wirtualna&nbsp;wycieczka</li>
+					<li>Galeria zdjęć</li>
+				</ul>
+			</div>
+			<div class="span-2 append-2"> 
+				Kontakt
+				<ul>
+					<li>Lokalizacja</li>
+				</ul>
+			</div>
+			<div class="span-2 append-2">    
+				Oferta    
+				<ul>
+					<li>Usługi&nbsp;stacjonarne</li>
+					<li>Usługi&nbsp;pielęgniarskie</li>
+					<li>Diagnostyka</li> 
+				</ul>
+			</div>
+			<div class="span-2 append-3">
+				Dla firm   
+				<ul>
+					<li>Medycyna&nbsp;pracy</li> 
+					<li>Medyczne&nbsp;zabezpieczenie imprez</li> 
+			    </ul>
+			</div>
+			<div class="span-2 append-2">   
+				Inne usługi  
+				<ul> 
+					<li>Transport&nbsp;sanitarny</li>
+					<li>Wizyty&nbsp;domowe</li>
+					<li>Odtrucia</li>
+					<li>Akupunktura</li>  
+				</ul>
+			</div>
+			<div class="span-2 prepend-1 last"> 
+				Sanatoria 
+				<ul>
+					<li>Capri-Tours</li>
+				</ul>	
+			</div>   
+			<div class="span-24 hr space"></div> 
+			<div class="span-7 append-12 footer-text-left">Copywright 2009 Przychodnia J. J. Capricorn</div> 
+			<div class="span-5 last footer-text-left">Layout strony Wonder Designs</div>
+		</div>   
+	</div>
+
 
 </body>
 </html>

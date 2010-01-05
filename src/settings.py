@@ -1,11 +1,19 @@
 # -*- coding: utf-8 -*-
 from ragendja.settings_pre import *
 
-MEDIA_VERSION = 1
+MEDIA_VERSION = 2
 
 COMBINE_MEDIA = {
-    'combined-%(LANGUAGE_DIR)s.css': (
-        'global/main.css',
+    'home.css':(
+        'global/css/main.css',              
+        'global/css/menu.css',
+    ),
+    'content.css':(
+        'global/css/content.css',    
+        'global/css/menu.css',          
+    ),
+    'menu.js':(
+        'global/js/menu.js',
     ),
 }
 
@@ -46,7 +54,8 @@ MIDDLEWARE_CLASSES = (
 )
 
 INSTALLED_APPS = (
-    'jquery',
+    'blueprintcss',
+    
 
     'django.contrib.auth',
     'django.contrib.sessions',
