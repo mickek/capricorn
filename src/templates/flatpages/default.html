@@ -1,0 +1,18 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}{{ flatpage.title }}{% endblock %}
+
+
+{% block content %}
+
+	<div class="gbox2">
+	   
+	    {% include 'common/top-bar.html' %}
+	   	<h2>{{ flatpage.title }}</h2>
+	</div>
+
+	{{ flatpage.content|safe }}
+	
+{% endblock %}

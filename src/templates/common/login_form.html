@@ -1,0 +1,23 @@
+<div class="span-8">&nbsp;</div>
+<div class="span-8" id="main_login_form">
+	<form action="{% url django.contrib.auth.views.login %}" method="post" >
+		
+		<table>
+			<tr><th>{{form.username.label}}:</th><td>{{form.username}}</td></tr>
+			{% if form.username.errors %}
+			<tr><td class="error" colspan="2">{{form.username.errors}}</td></tr>
+			{% endif %}
+			<tr><th>{{form.password.label}}:</th><td>{{form.password}}</td></tr>
+			{% if form.password.errors %}
+			<tr><td class="error" colspan="2">{{form.password.errors}}</td></tr>
+			{% endif %}
+			
+		</table>
+		
+		{% if form.non_field_errors %}<div class="error">{{form.non_field_errors}}</div>{% endif %}
+		
+		<input type="submit" value="login"/>
+		
+	</form>	
+ </div>
+ <div class="span-8">&nbsp;</div>

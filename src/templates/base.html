@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>10 CLOUDS / {% block title %}{% endblock %}</title>
+	{% block css %}
+	<link rel="stylesheet" type="text/css"  media="screen, projection" href="{{ MEDIA_URL }}combined-{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}.css" />
+	<link rel="stylesheet" type="text/css"  media="screen" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/base/jquery-ui.css"/>
+	{% endblock %}
+</head>
+
+{% load googletags %}
+
+<body>
+
+	<div id="container">
+	
+	    <div class="border"><img src="{{ MEDIA_URL }}global/images/10c_border1.jpg" alt="" /></div>
+	    
+		<!--   =================== /MAINBODY ======================== -->
+	    
+	    <div id="mainbody">
+	    
+	        <div class="col1">
+	        
+		        <a href="/"><img src="{{ MEDIA_URL }}global/images/10c_logo.jpg" alt="" /></a>
+		        
+		        <ul id="menu">
+			        <li><a href="/">Home page</a></li>
+			        {% for el in menu %}
+				        <li><a href="{{el.href}}">{{el.name}}</a></li>
+			        {% endfor %}
+		        </ul>
+	        
+	        </div>     
+	      
+			{% block content %}
+			{% endblock %}
+	    
+	    </div>
+	    
+		<!--   =================== /MAINBODY ======================== -->
+	    
+	    <div class="border"><img src="{{ MEDIA_URL }}global/images/10c_border2.jpg" alt="" /></div>
+	    
+	    <div id="footer">
+	    	<p>
+	    		&copy;2009 10Clouds | 
+	    		<a href="/">Home page</a>
+		        {% for el in menu %}
+			        / <a href="{{el.href}}">{{el.name}}</a>
+		        {% endfor %}
+		        / <a href="{% google_login_url request.get_full_path %}">Login</a>
+			</p>
+	    </div>
+	    
+	    <div style="clear:both;"></div>
+	
+	</div>
+
+</body>
+</html>
