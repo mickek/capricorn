@@ -1,0 +1,81 @@
+#sddm
+{	margin: 0;
+	padding: 0;
+	z-index: 30}
+
+#sddm .drop-down
+{	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	font: bold 13px arial;
+	}
+
+#sddm .drop-down a
+{	display: block;
+	margin: 0 1px 0 0;
+	padding: 4px 10px;
+	width: auto;
+	text-align: center;
+	text-decoration: none}
+
+#sddm .drop
+{	position: absolute;
+	visibility: hidden;
+	margin: 0px;
+	padding: 0px;
+	background-image: Url("global/images/drop-down-bg.png"); 
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	background-color: #ffffff;
+	border: 1px #d5d0d0 solid; 
+	font-weight: normal; 
+	width: 309px;
+   }
+
+	#sddm .drop a
+	{	position: relative;
+		display: block;
+		margin: 0px;
+	    width: auto;
+		white-space: nowrap;
+		text-align: left;
+		text-decoration: none;
+		color: #376855;
+		font-size: 12px;
+		font-family: Arial, Helvetica, sans-serif;
+		
+		}
+
+  #sddm .drop a:hover {
+		background: #376855;
+		color: #ffffff; 
+		width: auto;
+}      
+		
+.drop .hr {
+	width: 200px;  
+	height: 1px;
+	background-color: #d5d0d0;
+	text-align: center;  
+	margin-right: 100px;
+}   
+
+.drop ul li {
+	list-style-type: none;
+	color: #376855; 
+	border-bottom: 1px #d5d0d0 solid;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.drop ul {
+   padding: 9px;
+}                
+
+.img {
+	line-height: 6px;
+}  
+
+.img-2 {
+	line-height: 12px;
+}
