@@ -23,8 +23,19 @@
 
 	<div id="header">
 		<div class="container">
-			<div class="span-7 prepend-17 last header-text-right">  			
-			 	Strona główna | Promocje | Mapa Strony | Kontakt    		
+			<div class="span-9 prepend-16 last header-text-right">  			
+			 	Strona główna | Promocje | Mapa Strony | Kontakt |
+				{% if user.is_authenticated %}
+					
+					{% if google_user %}
+						<a href="{% google_logout_url %}">Wyloguj</a>
+					{% else %}
+						<a href="{% url django.contrib.auth.views.logout %}">Wyloguj</a>
+					{% endif %}
+				{% else %}
+					<a href="{% google_login_url request.get_full_path %}">Zaloguj</a>
+			  {% endif %}
+			 	    		
 			</div>
 		</div>
 	</div>        
