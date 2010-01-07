@@ -9,5 +9,79 @@
 
 {% block content %}
 		
+		  <div class="orange-box-container span-17">  
+			<div class="orange-box-top">
+				<div class="orange-box-bottom">
+					<div id="orange-box">           
+						<div> 
+							<div class="orange-left span-9"> 
+								
+								<h2>{{welcome.title}}</h2>
+								{{welcome.stub|safe}}
+								<p class="link"><a href="{{current_news.get_absolute_url}}">Czytaj więcej</a></p>
+	                        	
+	                        	<div class="hr"></div> 
+								
+								
+								<a href="" target="_blank"><img src="{{MEDIA_URL}}global/images/film.png" alt="film"></img></a><br/><br/>
+								<a href="" target="_blank"><img src="{{MEDIA_URL}}global/images/galeria.png" alt="galeria"></img></a>
+								
+							</div>
+							{% if current_news %}
+							<div class="orange-right span-6">  
+								
+								<!-- TODO  -->
+								<h3>Aktualności</h3>
+								<p class="header-brown">{{current_news.title}}</p>
+								
+								{{current_news.stub|safe}}
+									
+								<p class="link"><a href="{{current_news.get_absolute_url}}">Czytaj więcej</a></p>
+							</div>
+							{% endif %}   
+						</div>
+					</div> 
+				</div>
+			</div>
+		</div> 
+
+		<div class="span-7 last">  
+
+			<div class="yellow-box-container span-7"> 
+				<div class="yellow-box-left"> 
+					<div class="yellow-box-right"> 
+						<div class="yellow-box-top">
+							<div class="yellow-box-bottom">
+								<div id="yellow-box">           
+									<div>
+										{{services.stub|safe}}
+								  	</div> 
+								</div>
+					   		</div>  
+						</div> 
+					</div>
+				</div>
+			</div>   
+
+			<div class="blank span-7">&nbsp;</div>
+
+			<div class="green-box-container span-7"> 
+				<div class="green-box-left"> 
+					<div class="green-box-right"> 
+						<div class="green-box-top">
+							<div class="green-box-bottom">
+								<div id="green-box">           
+									<div>
+										{{promotions.stub|safe}}
+										<p class="link"><a href="{{promotions.get_absolute_url}}">Czytaj więcej</a></p>
+								  	</div> 
+								</div>
+					   		</div>  
+						</div> 
+					</div>
+				</div>
+			</div>
+
+		</div> 
 
 {% endblock %}

@@ -137,9 +137,14 @@ body img {
 	color: #321b07;
 }
 
-.orange-right p {
+.orange-right p.header-brown {
 	color: #b87f4a;  
+}
+
+.orange-right p {
+	color: black;  
 } 
+
 
 .link {
 	font-weight: bold;

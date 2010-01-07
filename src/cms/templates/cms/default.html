@@ -1,0 +1,9 @@
+{% extends 'page.html' %}
+
+{% block title %}
+	{{block.super}} / {{page.title}}
+{% endblock %}
+
+{% block cms-content %}
+	{{page.content|safe}}
+{% endblock %}

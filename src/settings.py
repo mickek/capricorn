@@ -49,19 +49,16 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'ragendja.sites.dynamicsite.DynamicSiteIDMiddleware',
-    #'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
-    #'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
+    'cms.middleware.CmsFallbackMiddleware'
 )
 
 INSTALLED_APPS = (
     'blueprintcss',
-    
 
     'django.contrib.auth',
     'django.contrib.sessions',
     'django.contrib.admin',
     'django.contrib.webdesign',
-    'django.contrib.flatpages',
     'django.contrib.sites',
     'appenginepatcher',
     'ragendja',

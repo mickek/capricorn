@@ -14,6 +14,7 @@ handler500 = 'ragendja.views.server_error'
 
 
 urlpatterns = auth_patterns + patterns('',
-    (r'^$', 'home.views.index'),    
+    (r'^$', 'home.views.index'),
+    ('^cms/', include('cms.urls')),
     ('^admin/', include(admin.site.urls)),
 ) + urlpatterns

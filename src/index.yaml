@@ -10,6 +10,21 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
+- kind: cms_category
+  properties:
+  - name: code
+  - name: order
+
+- kind: cms_page
+  properties:
+  - name: category
+  - name: date_added
+
+- kind: cms_page
+  properties:
+  - name: category
+  - name: order
+
 - kind: django_admin_log
   properties:
   - name: user
