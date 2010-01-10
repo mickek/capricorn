@@ -9,15 +9,9 @@
 {% block content %}
 
 	<div class="span-8">
-		<div class="nav">  
-			&nbsp; O nas
-			<div class="hr"></div>
-			<ul>
-				<li><p>Nasza Historia</p></li><div class="hr"></div>
-				<li><p>Przychodnia</p></li><div class="hr"></div>
-				<li><p>Wirtualna wycieczka</p></li><div class="hr"></div>    
-				<li><p>Galeria zdjęć</p></li>  
-			</ul>
+		<div class="nav">
+			{% block sidebar-left %}  
+			{% endblock %}
 		</div> 
 		<br/>
 		<a href="" target="_blank"><img src="{{MEDIA_URL}}global/images/film-2.png" alt="film"></img></a><br/><br/>

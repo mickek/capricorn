@@ -4,6 +4,8 @@ from google.appengine.ext import db
 from django.db.models import signals
 from common.appenginepatch.ragendja.dbutils import cleanup_relations
 from django.core.urlresolvers import reverse
+from cms.fields import CKEditor
+from django.contrib.sites.models import Site
 
 class Category(db.Model):
     
@@ -47,8 +49,13 @@ class Page(db.Model):
             return u"%s" % (self.title)
     
     class Meta:
-        verbose_name = _('strona')
-        verbose_name_plural = _('strony')  
+        verbose_name = _('strone')
+        verbose_name_plural = _('strony')
+        
+        
+        
+        
+          
         
 class Section(db.Model):
     

@@ -14,31 +14,36 @@
 				<div class="orange-box-bottom">
 					<div id="orange-box">           
 						<div> 
+							
 							<div class="orange-left span-9"> 
 								
-								<h2>{{welcome.title}}</h2>
-								{{welcome.stub|safe}}
-								<p class="link"><a href="{{current_news.get_absolute_url}}">Czytaj więcej</a></p>
-	                        	
-	                        	<div class="hr"></div> 
+								{% if welcome %}
+									<h2>{{welcome.title}}</h2>
+									{{welcome.stub|safe}}
+	
+									<p class="link"><a href="{{current_news.get_absolute_url}}">Czytaj więcej</a></p>
+		                        	<div class="hr"></div>
+	                        	{% endif %} 
 								
 								
 								<a href="" target="_blank"><img src="{{MEDIA_URL}}global/images/film.png" alt="film"></img></a><br/><br/>
 								<a href="" target="_blank"><img src="{{MEDIA_URL}}global/images/galeria.png" alt="galeria"></img></a>
 								
 							</div>
+							
 							{% if current_news %}
-							<div class="orange-right span-6">  
-								
-								<!-- TODO  -->
-								<h3>Aktualności</h3>
-								<p class="header-brown">{{current_news.title}}</p>
-								
-								{{current_news.stub|safe}}
+								<div class="orange-right span-6">  
 									
-								<p class="link"><a href="{{current_news.get_absolute_url}}">Czytaj więcej</a></p>
-							</div>
-							{% endif %}   
+									<!-- TODO  -->
+									<h3>Aktualności</h3>
+									<p class="header-brown">{{current_news.title}}</p>
+									
+									{{current_news.stub|safe}}
+										
+									<p class="link"><a href="{{current_news.get_absolute_url}}">Czytaj więcej</a></p>
+								</div>
+							{% endif %}
+							   
 						</div>
 					</div> 
 				</div>
@@ -54,7 +59,12 @@
 							<div class="yellow-box-bottom">
 								<div id="yellow-box">           
 									<div>
-										{{services.stub|safe}}
+									
+										{% if services %}
+											<h4>{{services.title}}</h4>
+											{{services.stub|safe}}
+										{% endif %}
+										
 								  	</div> 
 								</div>
 					   		</div>  
@@ -72,8 +82,13 @@
 							<div class="green-box-bottom">
 								<div id="green-box">           
 									<div>
-										{{promotions.stub|safe}}
-										<p class="link"><a href="{{promotions.get_absolute_url}}">Czytaj więcej</a></p>
+									
+										{% if promotions %}
+											<h5>{{promotions.title}}</h5>
+											{{promotions.stub|safe}}
+											<p class="link"><a href="{{promotions.get_absolute_url}}">Czytaj więcej</a></p>
+										{% endif %}
+										
 								  	</div> 
 								</div>
 					   		</div>  

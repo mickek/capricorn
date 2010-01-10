@@ -23,11 +23,9 @@
 
 	<div id="header">
 		<div class="container">
-			<div class="span-9 prepend-16 last header-text-right">  			
-			 	<a href="/">Strona Główna</a>&nbsp;|&nbsp;
-			 	<a href="/promocje/">Promocje</a>&nbsp;|&nbsp;
-			 	<a href="/mapa_strony/">Mapa Strony</a>&nbsp;|&nbsp;
-			 	<a href="/kontakt/">Kontakt</a>&nbsp;|&nbsp;
+			<div class="span-9 prepend-16 last header-text-right">
+				{% include 'common/menu_bar.html' %}  
+				&nbsp;|&nbsp;			
 				{% if user.is_authenticated %}
 					
 					{% if google_user %}
@@ -111,9 +109,7 @@
 
 	    </div>
 
-		<div class="flash-box span-16 last">
-			&nbsp;
-		</div>
+		<div class="flash-box span-16 last">&nbsp;</div>
 
 		<div class="blank span-24 last">&nbsp;</div>
 
@@ -129,56 +125,27 @@
 			<div class="span-12 footer-text-left">
 				Umówienie wizyty - telefon (022) 831-86-69 <span class="footer-text-right">| ul. Bukowińska 26B, Warszawa</span> 
 			</div>
-			<div class="span-7 prepend-5 last footer-text-right"> 
-			 	Strona główna | Promocje | Mapa Strony | Kontakt
+			<div class="span-8 prepend-4 last footer-text-right"> 
+			 	{% include 'common/menu_bar.html' %}
 			</div>   
+			
 			<div class="span-24 hr"></div>
-			<div class="span-2 append-2"> 
-				O nas
-				<ul>         
-			    	<li>Nasza&nbsp;Historia</li>
-					<li>Przychodnia</li>
-					<li>Wirtualna&nbsp;wycieczka</li>
-					<li>Galeria zdjęć</li>
-				</ul>
-			</div>
-			<div class="span-2 append-2"> 
-				Kontakt
-				<ul>
-					<li>Lokalizacja</li>
-				</ul>
-			</div>
-			<div class="span-2 append-2">    
-				Oferta    
-				<ul>
-					<li>Usługi&nbsp;stacjonarne</li>
-					<li>Usługi&nbsp;pielęgniarskie</li>
-					<li>Diagnostyka</li> 
-				</ul>
-			</div>
-			<div class="span-2 append-3">
-				Dla firm   
-				<ul>
-					<li>Medycyna&nbsp;pracy</li> 
-					<li>Medyczne&nbsp;zabezpieczenie imprez</li> 
-			    </ul>
-			</div>
-			<div class="span-2 append-2">   
-				Inne usługi  
-				<ul> 
-					<li>Transport&nbsp;sanitarny</li>
-					<li>Wizyty&nbsp;domowe</li>
-					<li>Odtrucia</li>
-					<li>Akupunktura</li>  
-				</ul>
-			</div>
-			<div class="span-2 prepend-1 last"> 
-				Sanatoria 
-				<ul>
-					<li>Capri-Tours</li>
-				</ul>	
-			</div>   
-			<div class="span-24 hr space"></div> 
+			
+			{% for category, items in menu %}
+				<div class="{% if forloop.last%}span-2 prepend-1 last{%else%}span-2 append-2{%endif%}">
+					<span>{{category.name}}</span>
+					{% if items %}
+						<ul>
+						{% for item in items %}
+							<li><a href="{{item.get_absolute_url}}" title="{{item.title}}">{{item.title}}</a></li>		
+						{% endfor %}
+						</ul>
+					{% endif %}
+				</div>
+			{% endfor %}
+			 
+			<div class="span-24 hr space"></div>
+			 
 			<div class="span-7 append-12 footer-text-left">Copywright 2009 Przychodnia J. J. Capricorn</div> 
 			<div class="span-5 last footer-text-left">Layout strony Wonder Designs</div>
 		</div>   
