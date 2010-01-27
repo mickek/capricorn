@@ -43,15 +43,14 @@
 	<div class="container">
 
 		<ul id="sddm">  
-			
 			{% for category, items in menu %}
 			
 			    <li class="drop-down">
 			    	<div class="{% if forloop.last%}span-1 prepend-1 last{%else%}span-1 append-3{%endif%}">
-				    	
-				    		<img {% if items %}onmouseover="mopen('m{{forloop.counter}}')" onmouseout="mclosetime()"{%endif%} src="{{MEDIA_URL}}global/images/menu{{forloop.counter}}.png" alt="{{category.name}}"/>
-						<a>
-				    	</a>
+				    		<a class="top-menu" {% if category.url %}href="{{category.url}}"{%endif%}>
+				    			<img {% if items %}onmouseover="mopen('m{{forloop.counter}}')" onmouseout="mclosetime()"{%endif%} src="{{MEDIA_URL}}global/images/menu{{forloop.counter}}.png" alt="{{category.name}}"/>
+							</a>
+
 				    	
 				    	{% if items %}
 						<div class="drop" id="m{{forloop.counter}}" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">  
@@ -77,9 +76,11 @@
 			
 			{% endfor %}
 			
+			<div style="clear:both;"></div>
+			
 		</ul>
 		
-		<div style="clear:both"></div>   
+		<div style="clear:both;height:0px;"></div>   
 
 		<div class="span-8"> 
 
@@ -103,7 +104,7 @@
 			<div class="menu-bottom span-8"> 
 				<ul>
 					<li><a href="/wizyta/">Umówienie wizyty</a></li>
-					<li><a href="/mapa/">Lokalizacja na mapie Google</a></li>
+					<li><a href="http://maps.google.com/places/pl/warszawa/bukowi%C5%84ska/26b/-jj-capricorn-sp-z-oo" target="_blank">Lokalizacja na mapie Google</a></li>
 				</ul>
 			</div>
 
@@ -132,10 +133,13 @@
 			<div class="span-24 hr"></div>
 			
 			{% for category, items in menu %}
-				<div class="{% if forloop.last%}span-2 prepend-1 last{%else%}span-2 append-2{%endif%}">
-					<span>{{category.name}}</span>
+				<div class="{% if forloop.last%}span-4 last{%else%}span-4{%endif%}">
+					<span>
+						{% if category.url%}<a class="category-name" href="{{category.url}}">{{category.name}}</a>
+						{% else %}{{category.name}}{%endif%}
+					</span>
 					{% if items %}
-						<ul>
+						<ul class="site-map">
 						{% for item in items %}
 							<li><a href="{{item.get_absolute_url}}" title="{{item.title}}">{{item.title}}</a></li>		
 						{% endfor %}

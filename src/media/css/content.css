@@ -276,7 +276,7 @@ body img {
 	padding: 10px;
 }  
 
-.menu-bottom a {
+.menu-bottom a, .header-text-right a, .footer-text a {
 	text-decoration: none;
 	font-weight: normal;
 	color: #427662;
@@ -307,6 +307,10 @@ body img {
 	color: #b47842; 
 	padding-top: 10px;
 }   
+
+.category-name{
+	color: #b47842 !important;    
+}
 
 #footer .hr {
 	width: 950px;

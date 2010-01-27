@@ -9,10 +9,12 @@ from django.contrib.sites.models import Site
 
 class Category(db.Model):
     
-    name    =   db.StringProperty(required=True)
-    code    =   db.StringProperty(required=True)
+    name        =   db.StringProperty(required=True)
+    code        =   db.StringProperty(required=True)
     
-    order   =   db.IntegerProperty()
+    order       =   db.IntegerProperty()
+    
+    url         =   db.StringProperty(required=False)
     
     def __unicode__(self):
         return u"%s %s (%s)" % (self.order, self.name, self.code)    

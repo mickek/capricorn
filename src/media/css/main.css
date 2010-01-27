@@ -293,12 +293,11 @@ body img {
 	padding: 10px;
 }  
 
-.menu-bottom a {
+.menu-bottom a, .header-text-right a, .footer-text a {
 	text-decoration: none;
 	font-weight: normal;
 	color: #427662;
 }
-
 
 #footer {
 	background-image: Url('global/images/footer.png');
@@ -324,6 +323,10 @@ body img {
 	color: #b47842; 
 	padding-top: 10px;
 }   
+
+.category-name{
+	color: #b47842 !important;    
+}
 
 #footer .hr {
 	width: 950px;
@@ -372,4 +375,8 @@ body img {
 
 .nav {
 	border: 1px #d5d1d1 solid;
+}
+
+.drop-down{
+    height:32px;
 }

@@ -1,7 +1,9 @@
 #sddm
-{	margin: 0;
+{	margin: 0px 0px 0px 0px;
 	padding: 0;
-	z-index: 30}
+	z-index: 30;
+	height: 32px;
+	}
 
 #sddm .drop-down
 {	margin: 0;
@@ -9,6 +11,7 @@
 	list-style: none;
 	float: left;
 	font: bold 13px arial;
+	height: 32px;
 	}
 
 #sddm .drop-down a
@@ -18,11 +21,11 @@
 	width: auto;
 	text-align: center;
 	text-decoration: none}
-
+	
 #sddm .drop
 {	position: absolute;
 	visibility: hidden;
-	margin: 0px;
+	margin: -8px 0px 0px 0px;
 	padding: 0px;
 	background-image: Url("global/images/drop-down-bg.png"); 
 	background-repeat: no-repeat;

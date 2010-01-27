@@ -20,15 +20,13 @@
 								{% if welcome %}
 									<h2>{{welcome.title}}</h2>
 									{{welcome.stub|safe}}
-	
 									<p class="link"><a href="{{current_news.get_absolute_url}}">Czytaj więcej</a></p>
-		                        	<div class="hr"></div>
 	                        	{% endif %} 
-								
-								
-								<a href="" target="_blank"><img src="{{MEDIA_URL}}global/images/film.png" alt="film"></img></a><br/><br/>
-								<a href="" target="_blank"><img src="{{MEDIA_URL}}global/images/galeria.png" alt="galeria"></img></a>
-								
+								<!-- 
+		                        	<div class="hr"></div>
+									<a href="" target="_blank"><img src="{{MEDIA_URL}}global/images/film.png" alt="film"></img></a><br/><br/>
+									<a href="" target="_blank"><img src="{{MEDIA_URL}}global/images/galeria.png" alt="galeria"></img></a>
+								-->
 							</div>
 							
 							{% if current_news %}

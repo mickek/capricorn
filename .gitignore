@@ -5,3 +5,5 @@
 .project
 .pydevproject
 src/_generated_media/*
+src/.datastore
+src/runserver.sh
