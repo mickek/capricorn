@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
-{% block title %}Page not found{% endblock %}
+{% block title %}Nie znaleziono strony{% endblock %}
+
+{% block css %}
+	{{block.super}}
+	<link rel="stylesheet" type="text/css"  media="screen, projection" href="{{ MEDIA_URL }}content.css" />
+{% endblock %}
+
 
 {% block content %}
-The page you requested could not be found.
+Szukana strona nie istnieje
 {% endblock %}

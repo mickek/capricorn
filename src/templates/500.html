@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
-{% block title %}Server error{% endblock %}
+{% block title %}Błąd serwera{% endblock %}
+
+{% block css %}
+	{{block.super}}
+	<link rel="stylesheet" type="text/css"  media="screen, projection" href="{{ MEDIA_URL }}content.css" />
+{% endblock %}
+
 
 {% block content %}
-There was an error while handling your request.
+Błąd serwera.
 {% endblock %}
