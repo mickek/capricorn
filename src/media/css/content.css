@@ -361,13 +361,17 @@ body img {
 	border: 1px #d5d1d1 solid; 
 	width: 309px !important; 
 	background-image: Url("global/images/drop-down-bg.png");
-	background-position: bottom left;
+	background-position: 0px 40px;
 	background-repeat: no-repeat; 
 	color: #517966;
 	font-size: 17px;   
     line-height: 40px;
 	background-color: #d7e9e7;
-}   
+}      
+
+.nav a:link, .nav a:visited, .nav a:active, .nav a:hover {
+	color: #3a3a3c;
+}
 
 .nav .hr {
 	width: 309px;
