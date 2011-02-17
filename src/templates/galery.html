@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block css %}
+	{{block.super}}
+	<link rel="stylesheet" type="text/css"  media="screen, projection" href="{{ MEDIA_URL }}gallery.css" />
+{% endblock %}
+
+
+{% block content %}
+
+	<div class="span-8">
+		<div class="nav">
+			{% block sidebar-left %}  
+			{% endblock %}
+		</div> 
+		<br/>
+		<a href="/wirtualna-wycieczka/" ><img src="{{MEDIA_URL}}global/images/film-2.png" alt="film"></img></a><br/><br/>
+		<a href="/galeria/" target="_blank"><img src="{{MEDIA_URL}}global/images/galeria-2.png" alt="galeria"></img></a>	
+	</div> 
+	
+	<div class="orange-box-container span-16 last">  
+		<div class="orange-box-top span-16 last">
+			<div class="orange-box-bottom span-16 last">
+				<div id="orange-box">           
+					<div> 
+
+						<div id="gallery" class="content"> 
+									<div id="controls" class="controls"></div> 
+									<div class="slideshow-container"> 
+										<div id="loading" class="loader"></div> 
+										<div id="slideshow" class="slideshow"></div> 
+									</div> 
+								</div> 
+								<div id="thumbs" class="navigation"> 
+									<ul class="thumbs noscript">
+										{% for url in galery %}
+										<li> 
+											<a class="thumb" href="{{MEDIA_URL}}global/galery/{{url}}" title="">{{url}}</a> 
+										</li> 
+										{% endfor %}
+									</ul> 
+								</div> 
+								<!-- End Minimal Gallery Html Containers --> 
+								<div style="clear: both;"></div> 
+							</div> 
+						</div> 
+
+
+
+						
+				    </div>
+				</div> 
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript"> 
+			// We only want these styles applied when javascript is enabled
+			/*$('div.navigation').css({'width' : '300px', 'float' : 'left'});*/
+			/*$('div.content').css('display', 'block');*/
+ 
+			
+			
+			$(document).ready(function() {				
+				// Initialize Minimal Galleriffic Gallery
+				$('#thumbs').galleriffic({
+					imageContainerSel:      '#slideshow',
+					controlsContainerSel:   '#controls'
+				});
+				
+				$('#thumbs').hide()
+			});
+</script> 
+
+	<br/>
+
+{% endblock %}

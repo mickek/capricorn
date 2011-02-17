@@ -3,6 +3,7 @@
 from django.views.generic.simple import direct_to_template
 from common.appenginepatch.ragendja.dbutils import get_object
 from cms.models import Page, Category
+from home.gallery import GALLERY
 
 def index(request):
     
@@ -16,3 +17,10 @@ def index(request):
         current_news = current_news[0] if current_news else None
     
     return direct_to_template(request, 'home.html', locals())
+
+
+def galery(request):
+
+    galery = GALLERY
+    
+    return direct_to_template(request, 'galery.html', locals())

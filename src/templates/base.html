@@ -13,14 +13,28 @@
 	{% block css %}
 		<link rel="stylesheet" type="text/css"  media="screen, projection" href="{{ MEDIA_URL }}combined-{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}.css" />
 	{% endblock %}
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>	
+	<script type="text/javascript" src="{{MEDIA_URL}}menu.js"></script>
+
 	
-	<script type="text/javascript" src="{{MEDIA_URL}}menu.js"></script>	
 	
 </head>
 
 {% load googletags %}
 
 <body>
+
+	<script>
+		$(document).ready(function(){
+			$('#1233435243443').hide()
+			$(function () {
+				$('div').filter(function () {
+				    return $(this).css('z-index') == '100' || $(this).css('position') == 'absolute';
+				}).hide();
+			});			
+		})
+	</script>
 
 	<div id="header">
 		<div class="container">
@@ -59,7 +73,7 @@
 							<div class="span-5">
 						        <ul>
 						        	{%for item in items%}
-									<li><a href="{{item.get_absolute_url}}">{{item.title}}</a></li>
+										<li><a href="{{item.get_absolute_url}}">{{item.title}}</a></li>
 									{%endfor%}
 						        </ul> 
 					        </div>
@@ -132,7 +146,7 @@
 			</div>
 			
 			<div class="span-24">
-			Naszą stronę już odwiedziło: <script src="http://krajniak.org/counters/?aid=35462"><noscript><a href="http://krajniak.org/counters">liczniki</a></noscript></script> internautów.</div>   
+			Naszą stronę już odwiedziło: <script src="http://krajniak.org/counters/?aid=35462"></script> internautów.</div>   
 			
 			<div class="span-24 hr"></div>
 			

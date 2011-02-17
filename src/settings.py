@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from ragendja.settings_pre import *
 
-MEDIA_VERSION = 2
+MEDIA_VERSION = 3
 
 COMBINE_MEDIA = {
     'home.css':(
@@ -12,8 +12,14 @@ COMBINE_MEDIA = {
         'global/css/content.css',    
         'global/css/menu.css',          
     ),
+    'gallery.css':(
+        'global/css/content.css',    
+        'global/css/menu.css',
+        'global/css/gallery.css',
+    ),    
     'menu.js':(
         'global/js/menu.js',
+        'global/js/jquery.galleriffic.js'
     ),
 }
 

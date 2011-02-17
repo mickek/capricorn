@@ -6,4 +6,5 @@
 .pydevproject
 src/_generated_media/*
 src/.datastore
-src/runserver.sh
+src/runserver.sh 
+src/media/src_galery/
