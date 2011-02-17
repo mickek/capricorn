@@ -80,7 +80,7 @@ body img {
 .flash-box {
     border: 1px #d5d0d0 solid; 
 	width: 628px !important;
-	height: 206px; 
+	height: 206px !important; 
 }  
 
 .orange-box-top {
