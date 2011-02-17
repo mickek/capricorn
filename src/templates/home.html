@@ -20,7 +20,7 @@
 								{% if welcome %}
 									<h2>{{welcome.title}}</h2>
 									{{welcome.stub|safe}}
-									<p class="link"><a href="{{current_news.get_absolute_url}}">Czytaj więcej</a></p>
+									<p class="link"><a href="{{welcome.get_absolute_url}}">Czytaj więcej</a></p>
 	                        	{% endif %} 
 								<!-- 
 		                        	<div class="hr"></div>
@@ -84,7 +84,7 @@
 										{% if promotions %}
 											<h5>{{promotions.title}}</h5>
 											{{promotions.stub|safe}}
-											<p class="link"><a href="{{promotions.get_absolute_url}}">Czytaj więcej</a></p>
+											<p class="link"><a href="/kupon/">Czytaj więcej</a></p>
 										{% endif %}
 										
 								  	</div> 

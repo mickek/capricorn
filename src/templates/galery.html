@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'page.html' %}
 
 {% block css %}
 	{{block.super}}
@@ -10,53 +10,34 @@
 {% endblock %}
 
 
-{% block content %}
+{% block cms-content %}
 
-	<div class="span-8">
-		<div class="nav">
-			{% block sidebar-left %}  
-			{% endblock %}
-		</div> 
-		<br/>
-		<a href="/wirtualna-wycieczka/" ><img src="{{MEDIA_URL}}global/images/film-2.png" alt="film"></img></a><br/><br/>
-		<a href="/galeria/" target="_blank"><img src="{{MEDIA_URL}}global/images/galeria-2.png" alt="galeria"></img></a>	
+	
+<div id="gallery" class="content"> 
+	
+	<div id="controls" class="controls"></div> 
+	<div class="slideshow-container"> 
+		<div id="loading" class="loader"></div> 
+		<div id="slideshow" class="slideshow"></div> 
+	</div> 
+ 
+	<div id="thumbs" class="navigation"> 
+		<ul class="thumbs noscript">
+			{% for url in galery %}
+			<li> 
+				<a class="thumb" href="{{MEDIA_URL}}global/galery/{{url}}" title="">{{url}}</a> 
+			</li> 
+			{% endfor %}
+		</ul> 
 	</div> 
 	
-	<div class="orange-box-container span-16 last">  
-		<div class="orange-box-top span-16 last">
-			<div class="orange-box-bottom span-16 last">
-				<div id="orange-box">           
-					<div> 
-
-						<div id="gallery" class="content"> 
-									<div id="controls" class="controls"></div> 
-									<div class="slideshow-container"> 
-										<div id="loading" class="loader"></div> 
-										<div id="slideshow" class="slideshow"></div> 
-									</div> 
-								</div> 
-								<div id="thumbs" class="navigation"> 
-									<ul class="thumbs noscript">
-										{% for url in galery %}
-										<li> 
-											<a class="thumb" href="{{MEDIA_URL}}global/galery/{{url}}" title="">{{url}}</a> 
-										</li> 
-										{% endfor %}
-									</ul> 
-								</div> 
-								<!-- End Minimal Gallery Html Containers --> 
-								<div style="clear: both;"></div> 
-							</div> 
-						</div> 
+	<!-- End Minimal Gallery Html Containers --> 
+	<div style="clear: both;"></div>
+	 
+</div> 
 
 
-
-						
-				    </div>
-				</div> 
-			</div>
-		</div>
-	</div>
+<br/><br/><br/><br/>						
 
 <script type="text/javascript"> 
 			// We only want these styles applied when javascript is enabled
@@ -76,6 +57,6 @@
 			});
 </script> 
 
-	<br/>
+
 
 {% endblock %}

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from ragendja.settings_pre import *
 
-MEDIA_VERSION = 9
+MEDIA_VERSION = 10
 
 COMBINE_MEDIA = {
     'home.css':(
