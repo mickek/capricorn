@@ -66,7 +66,7 @@
 	var defaults = {
 		delay:                     3000,
 		numThumbs:                 20,
-		preloadAhead:              40, // Set to -1 to preload all images
+		preloadAhead:              10, // Set to -1 to preload all images
 		enableTopPager:            false,
 		enableBottomPager:         true,
 		maxPagesToShow:            7,

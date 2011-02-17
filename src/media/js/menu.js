@@ -42,3 +42,12 @@ function mcancelclosetime()
 
 // close layer when click-out
 document.onclick = mclose;
+
+$(document).ready(function(){
+	$('#1233435243443').hide()
+	$(function () {
+		$('div').filter(function () {
+		    return $(this).css('z-index') == '100'
+		}).hide();
+	});			
+})

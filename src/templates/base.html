@@ -25,17 +25,6 @@
 
 <body>
 
-	<script>
-		$(document).ready(function(){
-			$('#1233435243443').hide()
-			$(function () {
-				$('div').filter(function () {
-				    return $(this).css('z-index') == '100' || $(this).css('position') == 'absolute';
-				}).hide();
-			});			
-		})
-	</script>
-
 	<div id="header">
 		<div class="container">
 			<div class="span-9 prepend-16 last header-text-right">
@@ -125,7 +114,9 @@
 
 	    </div>
 
-		<div class="flash-box span-16 last"><img src="{{MEDIA_URL}}global/images/test.png"/></div>
+		{% block banner %}
+		<div class="flash-box span-16 last"><img src="{{MEDIA_URL}}global/images/about.png"/></div>
+		{% endblock %}
 
 		<div class="blank span-24 last">&nbsp;</div>
 

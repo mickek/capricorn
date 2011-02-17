@@ -4,6 +4,11 @@
 	{{block.super}} / {{page.title}}
 {% endblock %}
 
+{% block banner %}
+<div class="flash-box span-16 last"><img src="{{MEDIA_URL}}global/images/{{page.category.code}}.png"/></div>
+{% endblock %}
+
+
 {% block sidebar-left %}
 			&nbsp;{{page.category.name}}
 			<div class="hr"></div>

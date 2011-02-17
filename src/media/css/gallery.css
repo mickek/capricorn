@@ -32,6 +32,7 @@ div.loader {
 	background-repeat: no-repeat;
 	background-position: center;
 	height: 510px; /* This should be set to be at least the height of the largest image in the slideshow */
+	display: none;
 }
 div.slideshow {
 
