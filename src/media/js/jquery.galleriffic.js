@@ -65,11 +65,11 @@
 
 	var defaults = {
 		delay:                     3000,
-		numThumbs:                 20,
+		numThumbs:                 60,
 		preloadAhead:              10, // Set to -1 to preload all images
 		enableTopPager:            false,
-		enableBottomPager:         true,
-		maxPagesToShow:            7,
+		enableBottomPager:         false,
+		maxPagesToShow:            1,
 		imageContainerSel:         '',
 		captionContainerSel:       '',
 		controlsContainerSel:      '',
@@ -570,7 +570,7 @@
 						} else {
 							// Show loading container
 							if (gallery.$loadingContainer) {
-								gallery.$loadingContainer.show();
+//								gallery.$loadingContainer.show();
 							}
 						}
 					}
@@ -781,6 +781,7 @@
 			// Rebuilds the pager control in the specified matched element.
 			// @param {jQuery} pager A jQuery element set matching the particular pager to be rebuilt.
 			buildPager: function(pager) {
+				return;
 				var gallery = this;
 				var numPages = this.getNumPages();
 				var page = this.getCurrentPage();

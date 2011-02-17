@@ -24,8 +24,11 @@ def render_page(request, f):
     f.stub = mark_safe(f.stub)
     f.content = mark_safe(f.content)
 
+    banner_image = f.category.code if f.category else f.code if f.code else 'main'
+
     c = RequestContext(request, {
         'page': f,
+        'banner_image': "%s.png" % banner_image
     })
     response = HttpResponse(t.render(c))
     populate_xheaders(request, response, FlatPage, f.id)
