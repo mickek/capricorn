@@ -370,7 +370,8 @@ body img {
 }      
 
 .nav a:link, .nav a:visited, .nav a:active, .nav a:hover {
-	color: #3a3a3c;
+	color: #3a3a3c;          
+	text-decoration: none;
 }
 
 .nav .hr {
