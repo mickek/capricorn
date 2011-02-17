@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block css %}
+	{{block.super}}
+	<link rel="stylesheet" type="text/css"  media="screen, projection" href="{{ MEDIA_URL }}gallery.css" />
+{% endblock %}
+
+{% block banner %}
+<div class="flash-box span-16 last"><img src="{{MEDIA_URL}}global/images/about.png"/></div>
+{% endblock %}
+
+
+{% block content %}
+
+	<div class="span-8">
+		<div class="nav">
+			{% block sidebar-left %}  
+			{% endblock %}
+		</div> 
+		<br/>
+		<a href="/wirtualna-wycieczka/" ><img src="{{MEDIA_URL}}global/images/film-2.png" alt="film"></img></a><br/><br/>
+		<a href="/galeria/" target="_blank"><img src="{{MEDIA_URL}}global/images/galeria-2.png" alt="galeria"></img></a>	
+	</div> 
+	
+	<div class="orange-box-container span-16 last">  
+		<div class="orange-box-top span-16 last">
+			<div class="orange-box-bottom span-16 last">
+				<div id="orange-box">           
+					<div style="text-align:center;">
+						<a href="{% url coupon_print%}" target="_blank">
+							<img src="{{MEDIA_URL}}global/images/coupon.png" style="width:600px;"/>
+							Drukuj
+						</a>
+						
+						
+				    </div>
+				</div> 
+			</div>
+		</div>
+	</div>
+
+	<br/>
+
+{% endblock %}

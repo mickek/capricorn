@@ -7,6 +7,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from google.appengine.api import users
 from django.views.generic.simple import redirect_to
 from django.utils.html import escape
+from django.views.generic.simple import direct_to_template
 
 admin.autodiscover()
 
@@ -17,5 +18,7 @@ urlpatterns = auth_patterns + patterns('',
     (r'^$', 'home.views.index'),
     (r'^galeria/$', 'home.views.galery'),
     ('^cms/', include('cms.urls')),
+    (r'^drukuj_kupon/$',             direct_to_template, {'template': 'coupon_print.html'}, 'coupon_print'),
+    (r'^kupon/$',             direct_to_template, {'template': 'coupon.html'}),    
     ('^admin/', include(admin.site.urls)),
 ) + urlpatterns
